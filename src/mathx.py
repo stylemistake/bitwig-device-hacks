@@ -3,34 +3,36 @@ from lib import util
 from lib import fs
 
 device_tooltip = '''
+MUL - A × B
 ADD - A + B
 SUB - A - B
-MUL - A * B
+MIN - min(A, B)
+MAX - max(A, B)
+QUA - Quantize A, with step size B
 DIV - A / B
 ABS - abs(A)
 SIG - sig(A)
-MIN - min(A, B)
-MAX - max(A, B)
 SQR - A^2
 POW - A^B
 SQRT - sqrt(A)
-EXP - e^A * B
+EXP - e^A
 LOG - log{b}(A)
-LOG2 - log2(A) * B
-LOG10 - log10(A) * B
-LN - ln(A) * B
-SIN - sin(2π * A) * B
-COS - cos(2π * A) * B
-TAN - cos(2π * A) * B
-QUA - Quantize A, with step size B
+LOG2 - log2(A)
+LOG10 - log10(A)
+LN - ln(A)
+SIN - sin(2π × A) × B
+COS - cos(2π × A) × B
+TAN - cos(2π × A) × B
+DELTA - ΔA × B
 '''.strip()
 
 modes = [
-    'ADD', 'SUB', 'MUL', 'DIV',
-    'ABS', 'SIG', 'MIN', 'MAX',
-    'SQR', 'POW', 'SQRT', 'EXP',
-    'LOG', 'LOG2', 'LOG10', 'LN',
-    'SIN', 'COS', 'TAN', 'QUA',
+    'MUL', 'ADD', 'SUB', 'MIN',
+    'MAX', 'QUA', 'DIV', 'ABS',
+    'SIG', 'SQR', 'POW', 'SQRT',
+    'EXP', 'LOG', 'LOG2', 'LOG10',
+    'LN', 'SIN', 'COS', 'TAN',
+    'DELTA',
 ]
 
 value_a = atoms.DecimalValue('A', min = -100, max = 100, step = 0.01)
@@ -52,7 +54,8 @@ grid_panel = (atoms.GridPanel()
         .set_position(0, 13))
     .add_item(atoms.PopupChooserPanelItem(model = value_mode)
         .set_tooltip(device_tooltip)
-        .set_position(5, 0))
+        .set_size(11, 4)
+        .set_position(3, 0))
     .add_item(atoms.NumberFieldPanelItem(model = value_a, style = 2)
         .set_tooltip('Signal A')
         .set_position(2, 4)
