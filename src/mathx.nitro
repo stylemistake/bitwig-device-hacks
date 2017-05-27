@@ -61,17 +61,25 @@ component mathx {
             out = log(a);
         }
         else if (op == 17) {
-            out = b * sin(a);
+            f32 phase = 2 * PI * a;
+            out = b * sin(phase);
         }
         else if (op == 18) {
-            out = b * cos(a);
+            f32 phase = 2 * PI * a;
+            out = b * cos(phase);
         }
         else if (op == 19) {
-            out = b * sin(a) / cos(a);
+            f32 phase = 2 * PI * a;
+            out = b * sin(phase) / cos(phase);
         }
         else if (op == 20) {
             out = (a - prev_a) * b;
-            prev_a = a
+            prev_a = a;
+        }
+        else if (op == 21) {
+            // Note: it's shitty
+            out = sin(PI * fabs(a)) * b + (1-b) * a;
+            prev_a = a;
         }
     }
 

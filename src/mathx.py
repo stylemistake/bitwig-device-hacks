@@ -24,6 +24,7 @@ SIN - sin(2π × A) × B
 COS - cos(2π × A) × B
 TAN - cos(2π × A) × B
 DELTA - ΔA × B
+PS90 - 90° phase shift
 '''.strip()
 
 modes = [
@@ -32,7 +33,7 @@ modes = [
     'SIG', 'SQR', 'POW', 'SQRT',
     'EXP', 'LOG', 'LOG2', 'LOG10',
     'LN', 'SIN', 'COS', 'TAN',
-    'DELTA',
+    'DELTA', 'PS90',
 ]
 
 value_a = atoms.DecimalValue('A', min = -100, max = 100, step = 0.01)
