@@ -1,6 +1,6 @@
 # Bitwig Device Hacks
 
-If you're feeling, that Bitwig modulation system is not complete, you're not
+If you're feeling that Bitwig modulation system is not complete, you're not
 alone. With this tool you will be able to modify the Math device and create
 your own.
 
@@ -26,8 +26,6 @@ devices.
 
 ## Description
 
-Currently, this project is undergoing massive rewrite. Stay tuned.
-
 ```
 usage: builder.py [-h] [-C] device
 
@@ -40,11 +38,3 @@ optional arguments:
   -h, --help  show this help message and exit
   -C          clean up the device data
 ```
-
-
-## Contacts
-
-Style Mistake <[stylemistake@gmail.com]>
-
-[stylemistake.com]: http://stylemistake.com
-[stylemistake@gmail.com]: mailto:stylemistake@gmail.com
